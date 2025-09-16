@@ -108,7 +108,7 @@ char* parser_get_value(struct Parser_Obj* parser_obj, char* key) {
 
 int parser_cleanup(struct Parser_Obj* parser_obj) {
     if (parser_obj->parse_ready) {
-        parser_close(parser_obj);
+        parser_close_file(parser_obj);
     }
 
     if (!parser_obj->info.current_count) {
