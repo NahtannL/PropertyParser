@@ -68,9 +68,10 @@ int parser_parse(struct Parser_Obj* parser_obj) {
         }
 
         // Check invalid formatting
-        if (!strtok(value_str, ":")) {
-            return -2;
-        }
+        //      Removed since it blocks urls being used as values
+        // if (strcspn(value_str, ":") == strlen(value_str)) {
+        //     return -2;
+        // }
 
         // Remove leading and trailing whitespace in both the key and value
         // substrings
