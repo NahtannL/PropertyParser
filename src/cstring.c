@@ -44,7 +44,7 @@ char* cstrtrim(char str[]) {
     if (*start_ptr != '\0') {
         // Remove trailing whitespace
         char* end_ptr = str + strlen(str) - 1; 
-        for (; *end_ptr == ' '; end_ptr--);
+        for (; *end_ptr == ' ' || *end_ptr == '\n'; end_ptr--);
     
         // Terminate new string
         *(++end_ptr) = '\0';
