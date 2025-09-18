@@ -50,16 +50,18 @@ int parser_test_parser_parse(void) {
     char* expected_keys[] = {
         "key1",
         "key2",
-        "key3"
+        "key3",
+        "Url"
     };
 
     char* expected_values[] = {
         "value1",
         "value2",
-        "value3"
+        "value3",
+        "https://www.google.com/"
     };
 
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 4; i++) {
         if (strcmp(expected_keys[i], test_parser.info.keys[i]) > 0) {
             printf("%s | %s\n", expected_keys[i], test_parser.info.keys[i]);
             return 1;
